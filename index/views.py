@@ -7,6 +7,7 @@ from user.models import *
 from django.core.mail import EmailMessage,EmailMultiAlternatives
 from django.conf import settings
 from django.template.loader import render_to_string
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
@@ -19,7 +20,7 @@ def myindex(request):
 	return render(request, 'index/index.html',context)
 
 
-
+@login_required(login_url='/user/login/')
 def myprop(request,slug):
 	listing = get_object_or_404(Property, slug=slug)
 	if request.method == 'POST':
