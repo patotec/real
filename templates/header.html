@@ -1,0 +1,126 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<!-- Mirrored from code-theme.com/html/findhouses/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 May 2022 13:50:41 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="author" content="">
+    <title>Dream Houseing - Real Estate Website</title>
+    <meta name="title" content="Dream Houseing - Best ~Real Estate  Platform" />
+    <meta content="Dream Houseing - the most convenient online real Estate interface. <br> Instant access to our variety of  options more than 150 countries, ">
+    <meta name="keywords" content="online trading service on financial markets" />
+    <meta name="theme-color" content="#080F20">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/jquery-ui.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i%7CMontserrat:600,800" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="/static/font/flaticon.css">
+    <link rel="stylesheet" href="/static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/css/fontawesome-5-all.min.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- ARCHIVES CSS -->
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/aos.css">
+    <link rel="stylesheet" href="/static/css/aos2.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/lightcase.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="/static/css/slick.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/maps.css">
+    <link rel="stylesheet" id="color" href="/static/css/colors/pink.css">
+</head>
+<header id="header-container" class="header head-tr">
+    <!-- Header -->
+    <div id="header" class="head-tr bottom">
+        <div class="container container-header">
+            <!-- Left Side Content -->
+            <div class="left-side">
+                <!-- Logo -->
+                <div id="logo">
+                    <a href="{% url 'indexurl:index' %}"><img src="images/logo-white-1.svg" data-sticky-logo="images/logo-red.svg" alt=""></a>
+                </div>
+                <!-- Mobile Navigation -->
+                <div class="mmenu-trigger">
+                    <button class="hamburger hamburger--collapse" type="button">
+                        <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+                <!-- Main Navigation -->
+                <nav id="navigation" class="style-1 head-tr">
+                    <ul id="responsive">
+                        <li><a href="{% url 'indexurl:index' %}">Home</a>
+                           
+                            </li>
+                            <li><a href="{% url 'indexurl:about' %}">About</a>
+                              
+                            </li>
+                            <li><a href="{% url 'indexurl:contact' %}">Contact</a>
+                              
+                            </li>
+                          
+                            <!-- Right Side Content / End -->
+
+                            <li class="d-none d-xl-none d-block d-lg-block"><a href="{% url 'userurl:login' %}">Login</a></li>
+                            <li class="d-none d-xl-none d-block d-lg-block"><a href="{% url 'userurl:signup' %}">Register</a></li>
+                        
+                           
+                           
+                    </ul>
+                </nav>
+                <!-- Main Navigation / End -->
+            </div>
+            <!-- Left Side Content / End -->
+
+            <!-- Right Side Content / End -->
+          
+            <!-- Right Side Content / End -->
+
+            <!-- Right Side Content / End -->
+            {% if user.is_authenticated %}
+            <div class="header-user-menu user-menu add">
+                <div class="header-user-name">
+                    <span><img src="{{user.image.url}}" alt=""></span>Hi, {{user.username}}!
+                </div>
+                <ul>
+                    <li><a href="{% url 'userurl:profile' %}"> Edit profile</a></li>
+                  
+                    <li><a href="{% url 'userurl:logout' %}">Log Out</a></li>
+                </ul>
+            </div>
+            {% else %}
+            <!-- Right Side Content / End -->
+
+            <div class="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
+                <!-- Header Widget -->
+                <div class="header-widget sign-in">
+                    <div class=""><a href="{% url 'userurl:login' %}">Sign In</a></div>
+                </div>
+                <!-- Header Widget / End -->
+            </div>
+            {% endif %}
+            <!-- Right Side Content / End -->
+
+            <!-- lang-wrap-->
+        
+            <!-- lang-wrap end-->
+
+        </div>
+    </div>
+    <!-- Header / End -->
+
+</header>
+
+  

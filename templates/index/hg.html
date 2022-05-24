@@ -1,0 +1,490 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body class="inner-pages sin-1 homepage-4 hd-white">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- START SECTION HEADINGS -->
+        <!-- Header Container
+        ================================================== -->
+       
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+        <!-- END SECTION HEADINGS -->
+
+        <!-- START SECTION PROPERTIES LISTING -->
+        <section class="single-proper blog details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 blog-pots">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <section class="headings-2 pt-0">
+                                    <div class="pro-wrapper">
+                                        <div class="detail-wrapper-body">
+                                            <div class="listing-title-bar">
+                                                <h3>{{data.name}}<span class="mrg-l-5 category-tag">For {{data.category}}</span></h3>
+                                                <div class="mt-0">
+                                                    <a href="#listing-location" class="listing-address">
+                                                        <i class="fa fa-map-marker pr-2 ti-location-pin mrg-r-5"></i>{{data.address}}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single detail-wrapper mr-2">
+                                            <div class="detail-wrapper-body">
+                                                <div class="listing-title-bar">
+                                                    <h4>$ {{data.price}}</h4>
+                                                    <div class="mt-0">
+                                                        <a href="#listing-location" class="listing-address">
+                                                            <p>$ {{data.sqft}} / sq ft</p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- main slider carousel items -->
+                                <div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
+                                    <h5 class="mb-4">Gallery</h5>
+                                    <div class="carousel-inner">
+                                        <div class="active item carousel-item" data-slide-number="0">
+                                            <img src="{{data.photo_1.url}}" class="img-fluid" alt="slider-listing">
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="1">
+                                            <img src="{{data.photo_2.url}}" class="img-fluid" alt="slider-listing">
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="2">
+                                            <img src="{{data.photo_3.url}}" class="img-fluid" alt="slider-listing">
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="4">
+                                            <img src="{{data.photo_4.url}}" class="img-fluid" alt="slider-listing">
+                                        </div>
+                                        <div class="item carousel-item" data-slide-number="5">
+                                            <img src="{{data.photo_5.url}}" class="img-fluid" alt="slider-listing">
+                                        </div>
+
+                                        <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                                        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+                                    </div>
+                                    <!-- main slider carousel nav controls -->
+                                    <ul class="carousel-indicators smail-listing list-inline">
+                                        <li class="list-inline-item active">
+                                            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
+                                                <img src="{{data.photo_1.url}}" class="img-fluid" alt="listing-small">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-1" data-slide-to="1" data-target="#listingDetailsSlider">
+                                                <img src="{{data.photo_2.url}}" class="img-fluid" alt="listing-small">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-2" data-slide-to="2" data-target="#listingDetailsSlider">
+                                                <img src="{{data.photo_3.url}}" class="img-fluid" alt="listing-small">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-3" data-slide-to="3" data-target="#listingDetailsSlider">
+                                                <img src="{{data.photo_4.url}}" class="img-fluid" alt="listing-small">
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a id="carousel-selector-4" data-slide-to="4" data-target="#listingDetailsSlider">
+                                                <img src="{{data.photo_5.url}}" class="img-fluid" alt="listing-small">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- main slider carousel items -->
+                                </div>
+                                <div class="blog-info details mb-30">
+                                    <h5 class="mb-4">Description</h5>
+                                    <p class="mb-3">{{data.description}}.</p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single homes-content details mb-30">
+                            <!-- title -->
+                            <h5 class="mb-4">Property Details</h5>
+                            <ul class="homes-list clearfix">
+                                
+                                <li>
+                                    <span class="font-weight-bold mr-1">Property status:</span>
+                                    <span class="det">For Sale</span>
+                                </li>
+                                <li>
+                                    <span class="font-weight-bold mr-1">Property Price:</span>
+                                    <span class="det">$230,000</span>
+                                </li>
+                                <li>
+                                    <span class="font-weight-bold mr-1">Rooms:</span>
+                                    <span class="det">6</span>
+                                </li>
+                                <li>
+                                    <span class="font-weight-bold mr-1">Bedrooms:</span>
+                                    <span class="det">7</span>
+                                </li>
+                                <li>
+                                    <span class="font-weight-bold mr-1">Bath:</span>
+                                    <span class="det">4</span>
+                                </li>
+                                <li>
+                                    <span class="font-weight-bold mr-1">Garages:</span>
+                                    <span class="det">2</span>
+                                </li>
+                                <li>
+                                    <span class="font-weight-bold mr-1">Year Built:</span>
+                                    <span class="det">10/6/2020</span>
+                                </li>
+                            </ul>
+                            <!-- title -->
+                            <h5 class="mt-5">Amenities</h5>
+                            <!-- cars List -->
+                            <ul class="homes-list clearfix">
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Air Cond</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Balcony</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Internet</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Dishwasher</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Bedding</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Cable TV</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Parking</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Pool</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                                    <span>Fridge</span>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                        <div class="floor-plan property wprt-image-video w50 pro">
+                            <h5>What's Nearby</h5>
+                            <div class="property-nearby">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="nearby-info mb-4">
+                                            <span class="nearby-title mb-3 d-block text-info">
+                                               <i class="fas fa-graduation-cap mr-2"></i><b class="title">Education</b>
+                                            </span>
+                                            <div class="nearby-list">
+                                                <ul class="property-list list-unstyled mb-0">
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">Education Mandarin</h6>
+                                                        <span>(15.61 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">Marry's Education</h6>
+                                                        <span>(15.23 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">The Kaplan</h6>
+                                                        <span>(15.16 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="nearby-info mb-4">
+                                            <span class="nearby-title mb-3 d-block text-success">
+                                              <i class="fas fa-user-md mr-2"></i><b class="title">Health & Medical</b>
+                                            </span>
+                                            <div class="nearby-list">
+                                                <ul class="property-list list-unstyled mb-0">
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">Natural Market</h6>
+                                                        <span>(13.20 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">Food For Health</h6>
+                                                        <span>(13.22 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">A Matter of Health</h6>
+                                                        <span>(13.34 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="nearby-info">
+                                            <span class="nearby-title mb-3 d-block text-danger">
+                                                <i class="fas fa-car mr-2"></i><b class="title">Transportation</b>
+                                            </span>
+                                            <div class="nearby-list">
+                                                <ul class="property-list list-unstyled mb-0">
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">Airport Transportation</h6>
+                                                        <span>(11.36 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">NYC Executive Limo</h6>
+                                                        <span>(11.87 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <h6 class="mb-3 mr-2">Empire Limousine</h6>
+                                                        <span>(11.52 miles)</span>
+                                                        <ul class="list-unstyled list-inline ml-auto">
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="fas fa-star-half fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                            <li class="list-inline-item m-0 text-warning"><i class="far fa-star fa-xs"></i></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="property-location map">
+                            <h5>Location</h5>
+                            <input id="addressinput" value="{{data.address}}" type="text" style="width: 447px" />   
+                            <input id="Button1" type="button" value="Find" onclick="return Button1_onclick()" /></td>
+                            <div class="divider-fade"></div>
+                            <div id="map" class="contact-map">
+                             
+                            </div>
+                            <input type="hidden" id="lat" value="{{data.latitude}}">
+                            <input type="hidden" id="lon" value="{{data.longitude}}">
+                        </div>
+                        <!-- Star Reviews -->
+                    
+                        <!-- End Reviews -->
+                        <!-- Star Add Review -->
+                        
+                        <!-- End Add Review -->
+                    </div>
+                    <aside class="col-lg-4 col-md-12 car">
+                        <div class="single widget">
+                            <!-- Start: Schedule a Tour -->
+                            <div class="schedule widget-boxed mt-33 mt-0">
+                                <div class="widget-boxed-header">
+                                    <h4><i class="fa fa-calendar pr-3 padd-r-10"></i>Schedule a Tour</h4>
+                                </div>
+                                <div class="widget-boxed-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 book">
+                                            <input type="text" id="reservation-date" data-lang="en" data-large-mode="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017" data-id="datedropper-0" data-theme="my-style" class="form-control" readonly="">
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 book2">
+                                            <input type="text" id="reservation-time" class="form-control" readonly="">
+                                        </div>
+                                    </div>
+                                    <div class="row mrg-top-15 mb-3">
+                                        <div class="col-lg-6 col-md-12 mt-4">
+                                            <label class="mb-4">Adult</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+										 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+											 <i class="fa fa-minus"></i>
+										 </button>
+									        </span>
+                                                <input type="text" name="quant[1]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
+                                                <span class="input-group-btn">
+											 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[1]">
+											  <i class="fa fa-plus"></i>
+											 </button>
+									        </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 mt-4">
+                                            <label class="mb-4">Children</label>
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+										 <button type="button" class="btn counter-btn theme-cl btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
+											 <i class="fa fa-minus"></i>
+										 </button>
+									        </span>
+                                                <input type="text" name="quant[2]" class="border-0 text-center form-control input-number" data-min="0" data-max="10" value="0">
+                                                <span class="input-group-btn">
+											 <button type="button" class="btn counter-btn theme-cl btn-number" data-type="plus" data-field="quant[2]">
+											  <i class="fa fa-plus"></i>
+											 </button>
+									        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="payment-method.html" class="btn reservation btn-radius theme-btn full-width mrg-top-10">Submit Request</a>
+                                </div>
+                            </div>
+                            <!-- End: Schedule a Tour -->
+                            <!-- end author-verified-badge -->
+                            <div class="sidebar">
+                                <div class="widget-boxed mt-33 mt-5">
+                                    <div class="widget-boxed-header">
+                                        <h4>Agent Information</h4>
+                                    </div>
+                                    <div class="widget-boxed-body">
+                                        <div class="sidebar-widget author-widget2">
+                                            <div class="agent-contact-form-sidebar">
+                                                <h4>Request Inquiry</h4>
+                                                <form name="contact_form" method="post" action="">
+                                                    {% csrf_token %}
+                                                
+                                                
+                                                    <input type="email" id="emailid" name="email" placeholder="Email Address" required />
+                                                    <textarea placeholder="Message" name="message" required></textarea>
+                                                    <input type="submit"class="multiple-send-message" value="Submit Request" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <!-- START SIMILAR PROPERTIES -->
+              
+                <!-- END SIMILAR PROPERTIES -->
+            </div>
+        </section>
+        <!-- END SECTION PROPERTIES LISTING -->
+
+   
+        </div>
+        <!--register form end -->
+
+
+        <!-- Date Dropper Script-->
+        <script>
+            $('#reservation-date').dateDropper();
+
+        </script>
+        <!-- Time Dropper Script-->
+        <script>
+            this.$('#reservation-time').timeDropper({
+                setCurrentTime: false,
+                meridians: true,
+                primaryColor: "#e8212a",
+                borderColor: "#e8212a",
+                minutesInterval: '15'
+            });
+
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+                    disableOn: 700,
+                    type: 'iframe',
+                    mainClass: 'mfp-fade',
+                    removalDelay: 160,
+                    preloader: false,
+                    fixedContentPos: false
+                });
+            });
+
+        </script>
+
+        <script>
+            $('.slick-carousel').each(function() {
+                var slider = $(this);
+                $(this).slick({
+                    infinite: true,
+                    dots: false,
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '0'
+                });
+
+                $(this).closest('.slick-slider-area').find('.slick-prev').on("click", function() {
+                    slider.slick('slickPrev');
+                });
+                $(this).closest('.slick-slider-area').find('.slick-next').on("click", function() {
+                    slider.slick('slickNext');
+                });
+            });
+
+        </script>
+      <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    </div>
+    <!-- Wrapper / End -->
+</body>
+{% endblock content %}

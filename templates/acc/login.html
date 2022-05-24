@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body class="inner-pages hd-white">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- START SECTION HEADINGS -->
+        <!-- Header Container
+        ================================================== -->
+     
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+        <section class="headings">
+            <div class="text-heading text-center">
+                <div class="container">
+                   
+                </div>
+            </div>
+        </section>
+
+      
+        <!-- END SECTION HEADINGS -->
+
+        <!-- START SECTION LOGIN -->
+        <div id="login">
+            <div class="login">
+                <form action=""  method="POST">
+                    {% csrf_token %}
+                    {% include 'messages.html' %}
+                    <div class="access_social">
+                        <a href="#0" class="social_bt facebook">Login with Facebook</a>
+                        <a href="#0" class="social_bt google">Login with Google</a>
+                        <a href="#0" class="social_bt linkedin">Login with Linkedin</a>
+                    </div>
+                    <div class="divider"><span>Or</span></div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username">
+                        <i class="icon_user_alt"></i>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password"  value="">
+                        <i class="icon_lock_alt"></i>
+                    </div>
+                    <div class="fl-wrap filter-tags clearfix add_bottom_30">
+                        <div class="checkboxes float-left">
+                            <div class="filter-tags-wrap">
+                                <input id="check-b" type="checkbox" name="check">
+                                <label for="check-b">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+                    </div>
+                    <input type="submit" class="btn_1 rounded full-width" value="Login to Dream Houseing">
+                  
+                    <div class="text-center add_top_10">New to Dream Houseing? <strong><a href="{% url 'userurl:signup' %}">Sign up!</a></strong></div>
+                </form>
+            </div>
+        </div>
+        <!-- END SECTION LOGIN -->
+
+        <!-- START FOOTER -->
+      
+
+    </div>
+    <!-- Wrapper / End -->
+</body>
+{% endblock content %}
