@@ -52,10 +52,10 @@ class Payment(models.Model):
 
 
 
-class ChangePasswordCode(models.Model):
-	user_email = models.EmailField(max_length=50)
-	user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+# class ChangePasswordCode(models.Model):
+# 	user_email = models.EmailField(max_length=50)
+# 	user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
-class ChangePassword(models.Model):
-	new_password = models.CharField(max_length=50, blank = False, null = False)
-	confirm_new_password = models.CharField(max_length=50, blank = False, null = False)
+# class ChangePassword(models.Model):
+# 	new_password = models.CharField(max_length=50, blank = False, null = False)
+# 	confirm_new_password = models.CharField(max_length=50, blank = False, null = False)

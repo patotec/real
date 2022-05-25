@@ -57,7 +57,7 @@ def mycontact(request):
 		message = request.POST.get('message')
 		cre = Contact.objects.create(email=email,name=name,subject=subject,message=message)
 		msg = EmailMessage('support', cre.email  +  "wants ur help  " + cre.message ,
-		settings.DEFAULT_FROM_EMAIL,['hanspilgaard01@gmail.com'],)
+		settings.DEFAULT_FROM_EMAIL,['dreamhouseforyou16@gmail.com'],)
 		msg.send()
 		messages.success(request, 'Thanks for your message we will repyl you shortly')
 	return render(request, 'index/contact-us.html')

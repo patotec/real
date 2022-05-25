@@ -130,87 +130,87 @@ def logout_view(request):
 	return redirect('/user/login')
 
 
-def change_password(request):
-    if request.method == 'POST':
-        form = ChangePasswordCodeForm(request.POST)
-        if form.is_valid():
-			# try:
-            email = form.cleaned_data.get('user_email')
-            detail = ChangePasswordCode.objects.filter(user_email=email)
-            if detail.exists():
-				# messages.add_message(request, messages.INFO, 'invalid')
-                for i in detail:
-                    i.delete()
-                form.save()
-                test = ChangePasswordCode.objects.get(user_email=email)
-                subject = "Change Password"
-                from_email = settings.EMAIL_HOST_USER
-                # Now we get the list of emails in a list form.
-                to_email = [email]
-                #Opening a file in python, with closes the file when its done running
-                detail2 = "https://Clickingcoins.com.com/user/"+ str(test.user_id)
-                msg = EmailMessage(
-                'Reset Password',
-                'Click ' + detail2 + " To reset your password",
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-                )
-                msg.send()
-                return redirect('userurl:change_password_confirm')
-            else:
-                form.save()
-                test = ChangePasswordCode.objects.get(user_email=email)
-                html = "https://Clickingcoins.com.com/user/"+ str(test.user_id)
+# def change_password(request):
+#     if request.method == 'POST':
+#         form = ChangePasswordCodeForm(request.POST)
+#         if form.is_valid():
+# 			# try:
+#             email = form.cleaned_data.get('user_email')
+#             detail = ChangePasswordCode.objects.filter(user_email=email)
+#             if detail.exists():
+# 				# messages.add_message(request, messages.INFO, 'invalid')
+#                 for i in detail:
+#                     i.delete()
+#                 form.save()
+#                 test = ChangePasswordCode.objects.get(user_email=email)
+#                 subject = "Change Password"
+#                 from_email = settings.EMAIL_HOST_USER
+#                 # Now we get the list of emails in a list form.
+#                 to_email = [email]
+#                 #Opening a file in python, with closes the file when its done running
+#                 detail2 = "https://Clickingcoins.com.com/user/"+ str(test.user_id)
+#                 msg = EmailMessage(
+#                 'Reset Password',
+#                 'Click ' + detail2 + " To reset your password",
+#                 settings.DEFAULT_FROM_EMAIL,
+#                 [email],
+#                 )
+#                 msg.send()
+#                 return redirect('userurl:change_password_confirm')
+#             else:
+#                 form.save()
+#                 test = ChangePasswordCode.objects.get(user_email=email)
+#                 html = "https://Clickingcoins.com.com/user/"+ str(test.user_id)
 
-                msg = EmailMessage(
-                'Reset Password',
-                'Click ' + html + " To reset your password",
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-                )
-                msg.send()
-                return redirect('userurl:change_password_confirm')
+#                 msg = EmailMessage(
+#                 'Reset Password',
+#                 'Click ' + html + " To reset your password",
+#                 settings.DEFAULT_FROM_EMAIL,
+#                 [email],
+#                 )
+#                 msg.send()
+#                 return redirect('userurl:change_password_confirm')
 
-        else:
-            return HttpResponse('Invalid Email Address')
-    else:
-        form = ChangePasswordCodeForm()
-    return render(request, 'acc/change_password.html', {'form':form})
-
-
-def change_password_confirm(request):
-	return render(request, 'acc/change_password_confirm.html', {})
-def change_password_code(request, pk):
-	try:
-		test = ChangePasswordCode.objects.get(pk=pk)
-		detail_email = test.user_email
-		u = User.objects.get(email=detail_email)
-		if request.method == 'POST':
-			form = ChangePasswordForm(request.POST)
-			if form.is_valid():
-				u = User.objects.get(email=detail_email)
-				new_password = form.cleaned_data.get('new_password')
-				confirm_new_password = form.cleaned_data.get('confirm_new_password')
-				if new_password == confirm_new_password:
-					u.set_password(confirm_new_password)
-					u.save()
-					test.delete()
-					return redirect('userurl:change_password_success')
-				else:
-					return HttpResponse('your new password should match with the confirm password')
+#         else:
+#             return HttpResponse('Invalid Email Address')
+#     else:
+#         form = ChangePasswordCodeForm()
+#     return render(request, 'acc/change_password.html', {'form':form})
 
 
-			else:
-				return HttpResponse('Invalid Details')
-		else:
-			form = ChangePasswordForm()
-		return render(request, 'acc/change_password_code.html', {'test':test, 'form':form, 'u':u})
-	except ChangePasswordCode.DoesNotExist:
-		return HttpResponse('bad request')
+# def change_password_confirm(request):
+# 	return render(request, 'acc/change_password_confirm.html', {})
+# def change_password_code(request, pk):
+# 	try:
+# 		test = ChangePasswordCode.objects.get(pk=pk)
+# 		detail_email = test.user_email
+# 		u = User.objects.get(email=detail_email)
+# 		if request.method == 'POST':
+# 			form = ChangePasswordForm(request.POST)
+# 			if form.is_valid():
+# 				u = User.objects.get(email=detail_email)
+# 				new_password = form.cleaned_data.get('new_password')
+# 				confirm_new_password = form.cleaned_data.get('confirm_new_password')
+# 				if new_password == confirm_new_password:
+# 					u.set_password(confirm_new_password)
+# 					u.save()
+# 					test.delete()
+# 					return redirect('userurl:change_password_success')
+# 				else:
+# 					return HttpResponse('your new password should match with the confirm password')
 
 
-def change_password_success(request):
-	return render(request, 'acc/suc1.html', {})
+# 			else:
+# 				return HttpResponse('Invalid Details')
+# 		else:
+# 			form = ChangePasswordForm()
+# 		return render(request, 'acc/change_password_code.html', {'test':test, 'form':form, 'u':u})
+# 	except ChangePasswordCode.DoesNotExist:
+# 		return HttpResponse('bad request')
+
+
+# def change_password_success(request):
+# 	return render(request, 'acc/suc1.html', {})
 
 
 # def rev(request):
