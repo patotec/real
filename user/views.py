@@ -213,11 +213,30 @@ def change_password_success(request):
 	return render(request, 'acc/suc1.html', {})
 
 
-def rev(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        name = request.POST.get('name')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-        cre = Request.objects.create(email=email,name=name,message=message)
-    return render(request, 'acc/suc1.html', {})
+# def rev(request):
+#     if request.method == 'POST':
+#         email = request.POST.get('email')
+#         name = request.POST.get('name')
+#         subject = request.POST.get('subject')
+#         message = request.POST.get('message')
+#         cre = Request.objects.create(email=email,name=name,message=message)
+#     return render(request, 'acc/suc1.html', {})
+
+def activate_user(request, uidb64, token):
+
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+
+        user = User.objects.get(pk=uid)
+
+    except Exception as e:
+        user = None
+
+    if user and generate_token.check_token(user, token):
+        user.is_email_verified = True
+        user.save()
+
+        messages.add_message(request, messages.SUCCESS,'Email verified, you can now login')
+        return redirect('userurl:login')
+
+    return render(request, 'acc/activate-failed.html', {"user": user})
