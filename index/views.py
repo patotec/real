@@ -23,22 +23,15 @@ def myindex(request):
 @login_required(login_url='/user/login/')
 def myprop(request,slug):
 	listing = get_object_or_404(Property, slug=slug)
+	qs = listing.bids.filter()
 	if request.method == 'POST':
-		email = request.POST.get('email')
-		message = request.POST.get('message')
+		price = request.POST.get('price')
 		user = User.objects.get(username=request.user)
-		cre = Request.objects.create(message=message,email=email,property=listing,user=user)
-		email_body = render_to_string('index/re.html', {
-		'user': user,
-		'data':listing
-		})
-		msg = EmailMultiAlternatives(subject='Invoice', body=email_body, from_email=settings.DEFAULT_FROM_EMAIL,to=[cre.email] )
-		msg.attach_alternative(email_body, "text/html")
-		msg.send()
-		return redirect('userurl:login')
-
+		cre = Bid.objects.create(price=price,user=user,house=listing)
+		messages.success(request, 'Thanks your bid price is under review')
 	context = {
-	'data': listing
+	'data': listing,
+	'bid':qs
 	}
 	return render(request, 'index/hg.html',context)
 

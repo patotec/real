@@ -55,11 +55,6 @@ class Property(models.Model):
 	longitude = models.CharField(max_length=200,default='-73.976150')
 	image = models.ImageField()
 	category = models.CharField(choices=CATEGORY_CHOICES, max_length=10 ,null=True)
-	photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-	photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-	photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-	photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-	photo_5 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
 	slug = models.SlugField(blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 

@@ -49,7 +49,7 @@
                                 <!-- main slider carousel items -->
                                 <div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
                                     <h5 class="mb-4">Gallery</h5>
-                                    <div class="carousel-inner">
+                                    <!-- <div class="carousel-inner">
                                         <div class="active item carousel-item" data-slide-number="0">
                                             <img src="{{data.photo_1.url}}" class="img-fluid" alt="slider-listing">
                                         </div>
@@ -69,9 +69,9 @@
                                         <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
                                         <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
 
-                                    </div>
+                                    </div> -->
                                     <!-- main slider carousel nav controls -->
-                                    <ul class="carousel-indicators smail-listing list-inline">
+                                    <!-- <ul class="carousel-indicators smail-listing list-inline">
                                         <li class="list-inline-item active">
                                             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
                                                 <img src="{{data.photo_1.url}}" class="img-fluid" alt="listing-small">
@@ -97,7 +97,7 @@
                                                 <img src="{{data.photo_5.url}}" class="img-fluid" alt="listing-small">
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                     <!-- main slider carousel items -->
                                 </div>
                                 <div class="blog-info details mb-30">
@@ -316,17 +316,48 @@
                       
                         <div class="property-location map">
                             <h5>Location</h5>
-                            <input id="addressinput" value="{{data.address}}" type="text" style="width: 447px" />   
-                            <input id="Button1" type="button" value="Find" onclick="return Button1_onclick()" /></td>
-                            <div class="divider-fade"></div>
-                            <div id="map" class="contact-map">
-                             
+                            <div class="mapouter"><div class="gmap_canvas">
+                                <iframe src="https://maps.google.com/maps?q={{data.latitude}}, {{data.longitude}}&z=15&output=embed" width="100%" height="270" frameborder="0" style="border:0"></iframe>
+                                <a href="https://connectionsgame.org/">Connections Puzzle</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+                            
                             </div>
                             <input type="hidden" id="lat" value="{{data.latitude}}">
                             <input type="hidden" id="lon" value="{{data.longitude}}">
                         </div>
                         <!-- Star Reviews -->
-                    
+                        <section class="reviews comments">
+                            <h3 class="mb-5">Bid Price</h3>
+                            {% for i in bid %}
+                            <div class="row mb-5">
+                                <ul class="col-12 commented pl-0">
+                                    <li class="comm-inf">
+                                        <div class="col-md-2">
+                                            <img src="{{i.user.image.url}}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="col-md-10 comments-info">
+                                            <div class="conra">
+                                                <h5 class="mb-2">{{i.user.username}}</h5>
+                                                <div class="rating-box">
+                                                    <div class="detail-list-rating mr-0">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="mb-4">{{i.created_at}}</p>
+                                            <p>{{i.price}}</p>
+                                         
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            {% endfor %}
+                          
+                        </section>
                         <!-- End Reviews -->
                         <!-- Star Add Review -->
                         
@@ -347,10 +378,9 @@
                                                 <h4>Request Inquiry</h4>
                                                 <form name="contact_form" method="post" action="">
                                                     {% csrf_token %}
+                                                {% include 'messages.html' %}
                                                 
-                                                
-                                                    <input type="email" id="emailid" name="email" placeholder="Email Address" required />
-                                                    <textarea placeholder="Message" name="message" required></textarea>
+                                                    <input type="number" id="emailid" name="price" placeholder="Bid Price" required />
                                                     <input type="submit"class="multiple-send-message" value="Submit Request" />
                                                 </form>
                                             </div>
@@ -360,6 +390,7 @@
                               
                             </div>
                         </div>
+                      
                     </aside>
                 </div>
                 <!-- START SIMILAR PROPERTIES -->

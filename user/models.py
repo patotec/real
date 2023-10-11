@@ -50,7 +50,14 @@ class Payment(models.Model):
     def __str__(self):
         return self.name
 
+class Bid(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    house = models.ForeignKey(Property,on_delete=models.CASCADE,related_name='bids')
+    price = models.CharField(max_length=50,default='0') 
+    created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.user.username
 
 # class ChangePasswordCode(models.Model):
 # 	user_email = models.EmailField(max_length=50)

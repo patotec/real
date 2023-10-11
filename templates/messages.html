@@ -1,13 +1,39 @@
-{% load static %}
-
-
-{% if messages %}
-
 {% for message in messages %}
-<div  style="color: #ff0303">
-	<strong>
-		{{ message }}
-	</strong>
-</div>
-{% endfor %}
-{% endif %}
+    {% if message.tags == 'success' %}
+      <!-- sweetalert js -->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        var m = "{{ message }}";
+        Swal.fire({
+          icon: 'success',
+          iconHtml: '<i class="fa fa-check"></i>',
+          text: m,
+          confirmButtonColor: '#fff',
+          color: '#000',
+          background: 'rgba(240, 245, 243)',
+          allowEscapeKey: false,
+          showClass: {
+            popup: 'my-icon'                     // disable popup animation css
+          },
+        });
+      </script>
+    {% else %}
+    <!-- sweetalert js -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      var m = "{{ message }}";
+      Swal.fire({
+        icon: 'error',
+        iconHtml: '<i class="fa fa-warning"></i>',
+        text: m,
+        confirmButtonColor: '#fff',
+        color: '#000',
+        background: 'rgba(240, 245, 243)',
+        allowEscapeKey: false,
+        showClass: {
+          popup: 'my-icon'                     // disable popup animation css
+        },
+      });
+    </script>
+    {% endif %}
+  {% endfor %}
